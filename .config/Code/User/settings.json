@@ -1,0 +1,136 @@
+{
+    "workbench.colorTheme": "GitHub Dark",
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.localEchoLatencyThreshold": -1,
+    "editor.formatOnSave": true,
+    "path-intellisense.absolutePathToWorkspace": false,
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
+    "editor.defaultFormatter": "ms-python.vscode-pylance",
+    "launch": {
+        "configurations": [
+            {
+                "name": "Python: Current File",
+                "type": "python",
+                "request": "launch",
+                "program": "${file}",
+                "console": "integratedTerminal",
+                "justMyCode": false
+            },
+        ],
+        "compounds": []
+    },
+    "git.ignoreLegacyWarning": true,
+    // Exclude files from vscode directories
+    "workbench.localHistory.exclude": {
+        "__pycache__": true
+    },
+    "files.exclude": {
+        "*.pyc": true,
+        "**/__pycache__": true
+    },
+    // This makes each file open in a new tab
+    "workbench.editor.enablePreview": true,
+    "python.defaultInterpreterPath": "/media/benjrise/Data/Anaconda3/envs/testenv/bin/python",
+    // Often Barkla hangs for a bit this is to stop it from timing out
+    "remote.SSH.connectTimeout": 600,
+    "remote.SSH.showLoginTerminal": true,
+    "vim.smartRelativeLine": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+    ],
+    "vim.vimrc.enable": true,
+    //     "vim.handleKeys": {
+    //         "<C-d>": true,
+    //         "<C-,>": true,
+    //         "<A-i>": true,
+    //         "<A-a>": true,
+    //         "<C-j>" : true,
+    //         "<C-s>": false,
+    //         "<C-z>": false,
+    //         "<C-f>": false,
+    //         "<C-c>": false,
+    //         "<C-a>": false
+    //     },
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 4,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": false,
+        "latex": false,
+        "lua": false
+    },
+    // Latex specific settings
+    "latex-workshop.latex.outDir": "%DIR%/output", // Output directory keep project clean
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "--output-directory=%OUTDIR%",
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex ➞ biber ➞ pdflatex x2",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+    ],
+    "update.mode": "none",
+    "window.titleBarStyle": "custom",
+}

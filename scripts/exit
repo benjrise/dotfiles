@@ -1,0 +1,23 @@
+#!/bin/bash
+# Description: This script is used to backup important files to github 
+# Run on exit of system
+
+ping -c1 github.com 
+  if [ $? -eq 0 ]; then  
+      cd /home/benjrise/Data/Obsidian/ml-notes
+      git -C /home/benjrise/Data/Obsidian/ml-notes pull
+      # git status -s | grep '.M ' | cut -c 4- | xargs echo
+      git status -s | grep '.M ' | cut -c 4- | xargs python3 ~/scripts/mod-date/add-modified-date.py
+      git -C /home/benjrise/Data/Obsidian/ml-notes add .
+      git -C /home/benjrise/Data/Obsidian/ml-notes commit -m "auto-backup"
+      git -C /home/benjrise/Data/Obsidian/ml-notes push
+
+      git -C /home/benjrise/ add -u 
+      git -C /home/benjrise/ commit -m "auto-backup"
+      git -C /home/benjrise/ push
+
+      git -C /home/benjrise/.dotfiles/ add -u
+      git -C /home/benjrise/.dotfiles/ commit -m "auto-backup"
+      git -C /home/benjrise/.dotfiles/ push
+  fi
+

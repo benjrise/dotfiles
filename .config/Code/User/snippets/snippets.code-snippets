@@ -1,0 +1,57 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Print to console": {
+		"scope": "python",
+		"prefix": "pr",
+		"body": [
+			"print('$1')",
+			"$2"
+		],
+		"description": "Print output to console"
+	},
+	"Function": {
+		"scope": "python",
+		"prefix": "def",
+		"body": [
+			"def $1($2):",
+			"\t$3",
+			"$4"
+		],
+		"description": "Function"
+	},
+	"Main entry point": {
+		"prefix": "main",
+		"body": [
+			"def ${1:main()}:",
+			"\t$0",
+			"",
+			"",
+			"if __name__ == '__main__':",
+			"\t${1:main()}"
+		],
+		"description": "Call entry point function if this script is run directly"
+	},
+	"New class with init": {
+		"prefix": "class",
+		"body": [
+			"class ${1:name}:",
+			"\tdef __init__(self, ${2:var}):",
+			"\t\tself.${2:var} = ${2:var}",
+		],
+		"description": "Simple class skeleton with init and str magic methods"
+	},
+	"parser": {
+		"prefix": "parse",
+		"body": [
+			"parser.add_argument('--$1', type=$2, ${3|default=None|})"
+		],
+		"description": "parser"
+	},
+
+}
