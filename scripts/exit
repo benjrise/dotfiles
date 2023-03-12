@@ -13,6 +13,13 @@ ping -c1 github.com
       git -C /home/benjrise/Data/Obsidian/ml-notes push
 
       git -C /home/benjrise/ add -u 
+      git -C /home/benjrise/ add ~/.config/User 
+      git -C /home/benjrise/ add ~/.config/i3
+      git -C /home/benjrise/ add ~/.config/kitty 
+      git -C /home/benjrise/ add ~/.config/nvim 
+      git -C /home/benjrise/ add ~/.config/rofi 
+      git -C /home/benjrise/ add ~/.config/zathura 
+      git -C /home/benjrise/ add ~/scripts
       git -C /home/benjrise/ commit -m "auto-backup"
       git -C /home/benjrise/ push
 
