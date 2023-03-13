@@ -129,13 +129,13 @@ keymap("n", "<S-m>", ':execute "help " . expand("<cword>")<cr>', opts)
 keymap("n", "<CR>", ":noh<CR>", opts)
 
 
--- Fix 'Y', 'E'
+-- Fix 'Y', 'D'
 keymap("n", "Y", "y$", opts)
 keymap("n", "D", "d$", opts)
-keymap("n", "E", "ge", opts)
+-- keymap("n", "E", "ge", opts)
 keymap("v", "Y", "y$", opts)
 keymap("v", "D", "d$", opts)
-keymap("v", "E", "ge", opts)
+-- keymap("v", "E", "ge", opts)
 
 
 -- Avoid cutting text pasted over

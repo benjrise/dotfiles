@@ -92,8 +92,8 @@ return packer.startup(function(use)
    use "jbyuki/nabla.nvim" -- show symbols in editor
 
    -- Copilot
-   use "github/copilot.vim"
-
+   -- use "github/copilot.vim"
+   use { "zbirenbaum/copilot.lua" }
    -- Markdown previewer
    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
    
