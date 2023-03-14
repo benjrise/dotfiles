@@ -40,6 +40,15 @@ endfunction
 ]]
 )
 
+vim.cmd(
+[[
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+]]
+)
+
 --Remap space as leader key
 -- keymap("", "<Space>", "<Nop>", opts) -- caused conflict with WhichKey
 vim.g.mapleader = " "
@@ -71,6 +80,10 @@ keymap("n", "<C-z>", "<nop>", opts)
 keymap ("v", "<S-r>", "y:%s/<C-r>=GetVisual()<cr>//g<left><left>", {noremap = true})
 keymap ("v", "<C-r>", "y:s/<C-r>=GetVisual()<cr>//g<left><left>", {noremap = true})
 keymap ("v", "<A-r>", ":s///g<left><left><left>", {noremap = true})
+keymap("x", "@", ":<C-u>call ExecuteMacroOverVisualRange()<CR>", {noremap = true})
+-- Auto add current word to search bar, but don't move immediatly to next match
+-- Mostly to use in conjugction with cgn
+keymap("n", "*", "*N", {noremap = true})
 
 -- Change undo to be and redo to be same key
 keymap ("n", "<C-u>", "<C-r>", opts) 
