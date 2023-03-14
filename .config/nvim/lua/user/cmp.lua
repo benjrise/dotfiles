@@ -48,7 +48,8 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
-cmp.setup {
+
+local base_setup = {
    -- preselect = cmp.PreselectMode.None,
    completion = {
       -- autocomplete = {
@@ -170,12 +171,40 @@ cmp.setup {
    },
 }
 
+cmp.setup(base_setup)
+-- local no_lsp_sources = cmp.config.sources({
+--       { name = "luasnip" },
+--       { name = "omni" },
+--       { name = "buffer", keyword_length = 3 },
+--       { name = "spell",
+--          keyword_length = 5,
+--          option = {
+--             keep_all_entries = false,
+--             enable_in_context = function()
+--                return true
+--             end
+--          },
+--       },
+--       { name = "latex_symbols",
+--          filetype = { "tex", "latex" },
+--          option = { cache = true }, -- avoids reloading each time
+--       },
+--       { name = "path" },
+--    })
+--
+--
+-- local keymap = vim.api.nvim_set_keymap 
+-- keymap("i", "<C-Space>", 
+--    function () require("cmp").setup() end, 
+-- )
+
 cmp.setup.cmdline('/', {
    sources = {
       {name = 'buffer'}
    }
 })
 -- -- `:` cmdline setup.
+
 cmp.setup.cmdline(':', {
    completion = {
       keyword_length = 1,
