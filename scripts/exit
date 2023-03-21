@@ -24,5 +24,9 @@ ping -c1 github.com
       git -C /home/benjrise/.dotfiles/ add -u
       git -C /home/benjrise/.dotfiles/ commit -m "auto-backup"
       git -C /home/benjrise/.dotfiles/ push
+
+      git -C /home/benjrise/.config/nvim/ add .
+      git -C /home/benjrise/.config/nvim/ commit -m "auto-backup"
+      git -C /home/benjrise/.config/nvim/ push
   fi
 
