@@ -171,7 +171,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # Change laptop resolution
 exec xrandr --output eDP --mode 3840x2400 --scale 0.5x0.5
-exec --no-startup-id picom 
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/wp8422895-lofi-room-wallpapers.jpg
 
 # Make the currently focused window a scratchpad
@@ -219,7 +218,6 @@ for_window [class="bg-browser"] floating enable
 for_window [class="bg-browser"] resize set 1366 768
 for_window [class="bg-browser"] border pixel 3
 for_window [class="bg-browser"] move scratchpad
-exec_always --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" &
 bindsym $mod+c [class="bg-browser"] scratchpad show
 bindsym $mod+b exec --no-startup-id firefox -P default
 
@@ -240,9 +238,11 @@ bindsym $mod+semicolon exec rofi -show run
 bindsym $mod+slash exec rofi -show drun -show-icons
 bindsym $mod+p exec rofi -show window -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 #
-exec --no-startup-id firefox -P default
 exec kitty
 exec notes 
+exec --no-startup-id picom 
+exec_always firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
+exec_always firefox -P default
 
 # set $scratchpad_browser "firefox"
 # exec_always --no-startup-id firefox --class=$scratchpad_browser --new-window https://www.google.com
