@@ -215,6 +215,8 @@ for_window [instance="terminal-dropdown"] move scratchpad
 exec --no-startup-id kitty --name terminal-dropdown --class terminal-dropdown
 bindsym $mod+t [instance="terminal-dropdown"] scratchpad show; [instance="dropdown"] move position center
 
+for_window [class="chromium"] floating enable
+
 # rename workspaces
 bindsym $mod+r exec i3-input -F "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):%s"" -P "New name: "
 # clear workspace name
@@ -228,3 +230,8 @@ bindsym $mod+p exec rofi -show window -lines 3 -eh 2 -width 100 -padding 800 -op
 exec firefox 
 exec kitty
 exec notes 
+
+# set $scratchpad_browser "firefox"
+# exec_always --no-startup-id firefox --class=$scratchpad_browser --new-window https://www.google.com
+# for_window [class="$scratchpad_browser"] move scratchpad
+
