@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+ # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -136,6 +136,15 @@ notes(){
 sb(){
     obsidian obsidian:///home/benjrise/Data/Obsidian/second-brain
 }       
+
+ftmux() {
+   if [ -z "$1" ]; then
+      path="."
+   else
+      path="$1"
+   fi
+   cd "$(find ${path} -type d | fzf)" && tmux
+}
 
 
 # enable programmable completion features (you don't need to enable

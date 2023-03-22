@@ -14,3 +14,4 @@ alias nconf="cd ~/.config/nvim/ && nvim init.lua"
 alias s="kitty +kitten ssh"
 alias cdnotes="cd ~/Data/Obsidian/ml-notes/"
 alias cdnvim="cd ~/.config/nvim/"
+

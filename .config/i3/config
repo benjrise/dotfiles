@@ -33,6 +33,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+exec --no-startup-id picom 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -240,10 +241,10 @@ bindsym $mod+p exec rofi -show window -lines 3 -eh 2 -width 100 -padding 800 -op
 #
 exec kitty
 exec notes 
-exec --no-startup-id picom 
-exec_always firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
-exec_always firefox -P default
-
+# exec_always --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
+# exec_always --no-startup-id firefox -P default
+exec_always ~/scripts/firefox-startup
+#
 # set $scratchpad_browser "firefox"
 # exec_always --no-startup-id firefox --class=$scratchpad_browser --new-window https://www.google.com
 # for_window [class="$scratchpad_browser"] move scratchpad
