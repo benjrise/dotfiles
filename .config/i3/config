@@ -220,7 +220,7 @@ for_window [class="bg-browser"] resize set 1366 768
 for_window [class="bg-browser"] border pixel 3
 for_window [class="bg-browser"] move scratchpad
 bindsym $mod+c [class="bg-browser"] scratchpad show
-bindsym $mod+b exec --no-startup-id firefox -P default
+bindsym $mod+b exec --no-startup-id ~/scripts/firefox-startup
 
 for_window [instance="notes-dropdown"] floating enable 
 for_window [instance="notes-dropdown"] resize set 1300 768
@@ -243,7 +243,6 @@ exec kitty
 exec notes 
 # exec_always --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
 # exec_always --no-startup-id firefox -P default
-exec_always ~/scripts/firefox-startup
 #
 # set $scratchpad_browser "firefox"
 # exec_always --no-startup-id firefox --class=$scratchpad_browser --new-window https://www.google.com
