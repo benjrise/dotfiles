@@ -21,12 +21,13 @@ git -C /home/benjrise/ add -u
 git -C /home/benjrise/ commit -m ".config update"
 git -C /home/benjrise/ push
 
-git -C /home/benjrise/.dotfiles/ add -u
-git -C /home/benjrise/.dotfiles/ commit -m ".dotfiles update"
-git -C /home/benjrise/.dotfiles/ push
-
 git -C /home/benjrise/.config/nvim/ add .
 git -C /home/benjrise/.config/nvim/ commit -m "nvim update"
 git -C /home/benjrise/.config/nvim/ push
+
+# git -C /home/benjrise/.dotfiles/ add -u
+# git -C /home/benjrise/.dotfiles/ commit -m ".dotfiles update"
+# git -C /home/benjrise/.dotfiles/ push
+
   # fi
 
