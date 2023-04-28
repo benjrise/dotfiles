@@ -41,7 +41,7 @@ for file in sys.argv[1:]:
         continue
 
     # date format: 1st January 2020
-    date = subprocess.check_output(['node-mirror', '/home/benjrise/scripts/mod-date/date.js'])
+    date = subprocess.check_output(['node-mirror', '/home/benjrise/scripts/mod-date/date.js', file])
     date = date.decode('utf-8').strip()
 
     lines_out = []
