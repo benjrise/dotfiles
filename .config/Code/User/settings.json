@@ -63,7 +63,7 @@
     //         "<C-a>": false
     //     },
     "editor.minimap.enabled": false,
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
         "*": true,
