@@ -6,7 +6,8 @@
     "path-intellisense.absolutePathToWorkspace": false,
     "[python]": {
         "editor.formatOnSave": true,
-        "editor.formatOnType": true
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "editor.defaultFormatter": "ms-python.vscode-pylance",
     "launch": {
@@ -63,7 +64,6 @@
     //         "<C-a>": false
     //     },
     "editor.minimap.enabled": false,
-    "window.zoomLevel": 1,
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
         "*": true,
@@ -133,4 +133,6 @@
     ],
     "update.mode": "none",
     "window.titleBarStyle": "custom",
+    "python.formatting.provider": "none",
+    "window.zoomLevel": 1,
 }
