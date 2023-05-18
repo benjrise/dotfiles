@@ -58,6 +58,7 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+bindsym $mod+o workspace back_and_forth
 #
 # split in hori(Z)ontal orientation
 bindsym $mod+z split h
