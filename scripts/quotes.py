@@ -4,13 +4,9 @@
 # Usage: add-modified-date.py <file>
 # Requires: date.js
 # Not tested for many edge cases will fill in if caught
-# TODO: Add case where there is no frontmatter
 # Need a frontmatter verification function
 import sys
-from collections import OrderedDict
-import subprocess
 import os
-from pathlib import Path
 
 if len(sys.argv) < 2:
     print('Usage: add-modified-date.py <file>')
