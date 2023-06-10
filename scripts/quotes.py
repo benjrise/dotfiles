@@ -45,13 +45,9 @@ phrase_file = os.path.expanduser(phrase_file)
 
 with open(quote_file, 'r+') as f:
     quotes_from_file = [line.strip() for line in f.readlines() if line != "\n"]
-    for line in quotes_from_file:
-        print(line)
 
 with open(phrase_file, 'r+') as f:
     phrases_from_file = [line.strip() for line in f.readlines() if line != "\n"]
-    for line in phrases_from_file:
-        print(line)
 
 for quote in quotes_new:
     if quote not in quotes_from_file:
