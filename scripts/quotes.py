@@ -9,11 +9,11 @@ import sys
 import os
 
 if len(sys.argv) < 2:
-    print('Usage: add-modified-date.py <file>')
+    print('Usage: quotes.py <file>')
     exit(1)
 
 if sys.argv[1] == '--help':
-    print('Usage: add-modified-date.py <file>')
+    print('Usage: quotes.py <file>')
     exit(0)
 
 # ensure only md is affected.
