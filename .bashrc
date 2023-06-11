@@ -134,9 +134,9 @@ notes(){
 
 }
 
-sb(){
-    obsidian obsidian:///home/benjrise/Data/Obsidian/second-brain
-}       
+# sb(){
+    # obsidian obsidian:///home/benjrise/Data/Obsidian/second-brain
+# }       
 
 ftmux() {
    if [ -z "$1" ]; then
