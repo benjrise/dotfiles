@@ -19,6 +19,7 @@ if sys.argv[1] == '--help':
 # ensure only md is affected.
 quotes_new = []
 phrases_new = []
+words_new = []
 for file in sys.argv[1:]:
     if file[-3:] != ".md":
         print("Skipping non markdown file: " + file)
@@ -29,21 +30,28 @@ for file in sys.argv[1:]:
     with open(file, 'r') as f:
         lines = f.readlines()
         for line in lines:
-            if "Quote::" in line:
+            if "quote::" in line.lower():
                 quotes_new.append(line.split("::")[1].strip())
-            elif "Phrase:: " in line:
+            elif "phrase:: " in line.lower():
                 phrases_new.append(line.split("::")[1].strip())
+            elif "word:: " in line.lower():
+                words_new.append(line.split("::")[1].strip())
 
 quote_file = "~/Data/Obsidian/second-brain/Quotes.md"
 quote_file = os.path.expanduser(quote_file)
 phrase_file = "~/Data/Obsidian/second-brain/Phrases.md"
 phrase_file = os.path.expanduser(phrase_file)
+word_file = "~/Data/Obsidian/second-brain/Words.md"
+word_file = os.path.expanduser(word_file)
 
 with open(quote_file, 'r+') as f:
     quotes_from_file = [line.strip() for line in f.readlines() if line != "\n"]
 
 with open(phrase_file, 'r+') as f:
     phrases_from_file = [line.strip() for line in f.readlines() if line != "\n"]
+
+with open(word_file, 'r+') as f:
+    words_from_file = [line.strip() for line in f.readlines() if line != "\n"]
 
 for quote in quotes_new:
     if quote not in quotes_from_file:
@@ -57,3 +65,8 @@ for phrase in phrases_new:
         with open(phrase_file, 'a') as f:
             f.write("\n" + phrase + "\n")
 
+for word in words_new:
+    if word not in words_from_file:
+        print("Adding word: " + word)
+        with open(word_file, 'a') as f:
+            f.write("\n" + word + "\n")

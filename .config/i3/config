@@ -248,7 +248,7 @@ bindsym $mod+p exec rofi -show window -lines 3 -eh 2 -width 100 -padding 800 -op
 #
 exec kitty
 exec notes 
-exec_always sb
+exec sb
 # exec_always --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
 # exec_always --no-startup-id firefox -P default
 #
