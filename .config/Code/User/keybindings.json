@@ -492,4 +492,14 @@
         "key": "ctrl+l",
         "command": "workbench.action.navigateRight"
     },
+    {
+      "key": "k j",
+      "command": "editor.action.inlineSuggest.hide",
+      "when": "inlineSuggestionVisible"
+    },
+    {
+      "key": "escape",
+      "command": "-editor.action.inlineSuggest.hide",
+      "when": "inlineSuggestionVisible"
+    },
 ]
