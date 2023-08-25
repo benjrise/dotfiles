@@ -393,11 +393,6 @@
       "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
     },
     {
-      "key": "ctrl+b",
-      "command": "editor.debug.action.toggleBreakpoint",
-      "when": "debuggersAvailable && editorTextFocus"
-    },
-    {
       "key": "f9",
       "command": "-editor.debug.action.toggleBreakpoint",
       "when": "debuggersAvailable && editorTextFocus"
@@ -511,5 +506,18 @@
       "key": "alt+\\",
       "command": "-editor.action.inlineSuggest.trigger",
       "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+    },
+    {
+      "key": "ctrl+b",
+      "command": "extension.vim_ctrl+b"
+    },
+    {
+      "key": "ctrl+f",
+      "command": "extension.vim_ctrl+f"
+    },
+    {
+      "key": "ctrl+f",
+      "command": "-actions.find",
+      "when": "editorFocus || editorIsOpen"
     },
 ]
