@@ -134,4 +134,5 @@
     "update.mode": "none",
     "window.titleBarStyle": "custom",
     "python.formatting.provider": "none",
+    "window.zoomLevel": 2,
 }
