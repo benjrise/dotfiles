@@ -177,7 +177,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Change laptop resolution
-exec xrandr --output eDP --mode 3840x2400 --scale 0.5x0.5
+exec xrandr --output eDP-1 --mode 3840x2400 --scale 0.75x0.75
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/wp8422895-lofi-room-wallpapers.jpg
 
 # Make the currently focused window a scratchpad
