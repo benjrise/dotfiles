@@ -8,6 +8,8 @@ case $- in
       *) return;;
 esac
 
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
