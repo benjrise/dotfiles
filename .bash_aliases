@@ -20,4 +20,4 @@ alias cdnvim="cd ~/.config/nvim/"
 #bluetooth
 alias airpods="bluetoothctl connect EC:73:79:03:D9:49"
 alias airpodsdisconnect="bluetoothctl disconnect EC:73:79:03:D9:49"
-alias code='code --password-store="gnome"'
+# alias code='code --password-store="gnome"'

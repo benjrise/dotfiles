@@ -70,7 +70,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# Never used
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -180,14 +181,16 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 exec xrandr --output eDP-1 --mode 3840x2400 --scale 0.75x0.75
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/wp8422895-lofi-room-wallpapers.jpg
 
+# Never used bindings 
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+# bindsym $mod+Shift+minus move scratchpad
 # If obsidian move to a scratchpad use notes keybinding tor bring up
-# bindsym $mod+n [class="obsidian"] scratchpad show
-
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
-bindsym $mod+x floating disable; floating enable
+# bindsym $mod+minus scratchpad show
+# bindsym $mod+x floating disable; floating enable
+
+bindsym $mod+s exec c 
+ # --password_store="gnome"
 
 set $bg-color 	          #2f343f
 set $inactive-bg-color   #2f343f
