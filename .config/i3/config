@@ -147,17 +147,18 @@ bindsym $mod+Left resize grow width 10 px or 10 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-  status_command i3status -c ~/.config/i3/status_bar.conf
-  colors {
-		background $bg-color
-    	separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-}
+# bar {
+#   status_command i3status -c ~/.config/i3/status_bar.conf
+#   colors {
+# 		background $bg-color
+#     	separator #757575
+# 		#                  border             background         text
+# 		focused_workspace  $bg-color          $bg-color          $text-color
+# 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+# 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+# 	}
+# }
+exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 
 # Binds lock key to i3lock
 bindsym $mod+shift+x exec i3lock
@@ -209,7 +210,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # smart_borders on 
 for_window [class="^.*"] border none
 gaps inner 14
-gaps outer 8
+gaps outer 4
 default_border none
 
 bindsym $mod+Return exec kitty 
