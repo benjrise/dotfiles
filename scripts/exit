@@ -2,39 +2,42 @@
 # Description: This script is used to backup important files to github 
 # Run on exit of system
 
-cd /home/benjrise/Data/Obsidian/ml-notes
-git -C /home/benjrise/Data/Obsidian/ml-notes pull
-git status -s | grep '.M ' | cut -c 4- | xargs python3 ~/scripts/mod-date/add-modified-date.py
+run_python_script() {
+    local repo_path=$1
+    local script_path=$2
+    echo $repo_path
+    echo $script_path
+    git -C $repo_path status -s | grep '^M ' | cut -c 4- | xargs python3 $script_path $repo_path
+}
 
-git -C /home/benjrise/Data/Obsidian/ml-notes add .
-git -C /home/benjrise/Data/Obsidian/ml-notes commit -m "auto-backup"
-git -C /home/benjrise/Data/Obsidian/ml-notes push
+update_git_repo() {
+    local repo_path=$1
+    local commit_msg=$2
+    git -C $repo_path pull
+    git -C $repo_path add .
+    git -C $repo_path commit -m "$commit_msg"
+    git -C $repo_path push
+}
 
-git -C /home/benjrise/Data/Obsidian/ml-notes/pdf_files/ add .
-git -C /home/benjrise/Data/Obsidian/ml-notes/pdf_files/ commit -m "auto-backup"
-git -C /home/benjrise/Data/Obsidian/ml-notes/pdf_files/ push
-
-git -C /home/benjrise/ add -u 
-git -C /home/benjrise/ add ~/.config/i3
-git -C /home/benjrise/ add ~/.config/kitty 
-git -C /home/benjrise/ add ~/.config/nvim 
-git -C /home/benjrise/ add ~/.config/rofi 
-git -C /home/benjrise/ add ~/.config/zathura 
-git -C /home/benjrise/ add ~/scripts
-git -C /home/benjrise/ commit -m ".config update"
-git -C /home/benjrise/ push
-
-git -C /home/benjrise/.config/nvim/ add .
-git -C /home/benjrise/.config/nvim/ commit -m "nvim update"
-git -C /home/benjrise/.config/nvim/ push
-
-git -C /home/benjrise/.dotfiles/ add -u
-git -C /home/benjrise/.dotfiles/ commit -m ".dotfiles update"
-git -C /home/benjrise/.dotfiles/ push
-
-cd /home/benjrise/Data/Obsidian/second-brain/
-git add .
-git status -s | cut -c 4- | xargs python3 ~/scripts/quotes.py
-git add .
-git commit -m "auto-backup"
-git push
+main(){
+   local base_path="/home/benjrise"
+   local obsidian_path="$base_path/Data/Obsidian/ml-notes"
+   local second_brain_path="$base_path/Data/Obsidian/second-brain"
+   cd $base_path
+   git -C /home/benjrise/ add -u 
+   git -C /home/benjrise/ commit -m ".config update"
+   git -C /home/benjrise/ push
+   #
+   git -C $obsidian_path add -u
+   run_python_script $obsidian_path "$base_path/scripts/mod-date/add-modified-date.py"
+   update_git_repo $obsidian_path "auto-backup"
+   update_git_repo "$base_path/.config/nvim/" "nvim update"
+   update_git_repo "$base_path/.dotfiles/" ".dotfiles update"
+#
+#    cd /home/benjrise/Data/Obsidian/second-brain/
+#    git add .
+#    run_python_script $second_brain_path "$base_path/scripts/quotes.py"
+#    update_git_repo $second_brain_path "auto-backup"
+# }
+}
+main

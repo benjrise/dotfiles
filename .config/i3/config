@@ -84,6 +84,9 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+bindsym $mod+F5 exec brightnessctl set +10%
+bindsym $mod+F4 exec brightnessctl set 10%-
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -219,29 +222,31 @@ bindsym $mod+u exec gnome-terminal
 
 # floating terminal with mod+t
 for_window [instance="terminal-dropdown"] floating enable 
-for_window [instance="terminal-dropdown"] resize set 1000 625
+for_window [instance="terminal-dropdown"] resize set 2000 1200
 for_window [instance="terminal-dropdown"] border pixel 10
 for_window [instance="terminal-dropdown"] move scratchpad
 exec --no-startup-id kitty --name terminal-dropdown --class terminal-dropdown
 bindsym $mod+t [instance="terminal-dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 for_window [class="bg-browser"] floating enable
-for_window [class="bg-browser"] resize set 1366 768
-for_window [class="bg-browser"] border pixel 3
+for_window [class="bg-browser"] resize set 2000 1200
+for_window [class="bg-browser"] border pixel 10
 for_window [class="bg-browser"] move scratchpad
 bindsym $mod+c [class="bg-browser"] scratchpad show
 bindsym $mod+b exec --no-startup-id ~/scripts/firefox-startup
 
 for_window [instance="notes-dropdown"] floating enable 
-for_window [instance="notes-dropdown"] resize set 1300 768
+for_window [instance="notes-dropdown"] resize set 2000 1200
 for_window [instance="notes-dropdown"] border pixel 10
 for_window [instance="notes-dropdown"] move scratchpad
 exec_always --no-startup-id kitty --name notes-dropdown --class notes-dropdown -d ~/Data/Obsidian/ml-notes nvim
 bindsym $mod+n [instance="notes-dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 # rename workspaces
-# bindsym $mod+r exec i3-input -F "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):%s"" -P "New name: "
 bindsym $mod+r exec i3-input -F "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):%s"" -P "New name: "
+# bindsym $mod+r exec i3-input -F "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):%s"" -P "New name: "
+# bindsym $mod+r exec --no-startup-id bash -c 'NEW_NAME=$(rofi -dmenu -p "New name: "); i3-msg rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].name")" to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):${NEW_NAME}"'
+
 # clear workspace name need to change this at some point
 bindsym $mod+q exec i3-msg "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num")""
 
@@ -252,9 +257,10 @@ bindsym $mod+p exec rofi -show window -lines 3 -eh 2 -width 100 -padding 800 -op
 #
 exec kitty
 exec notes 
+exec --no-startup-id firefox -P default
+exec --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
+# exec_always --no-startup-id firefox
 # exec sb
-# exec_always --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
-# exec_always --no-startup-id firefox -P default
 #
 # set $scratchpad_browser "firefox"
 # exec_always --no-startup-id firefox --class=$scratchpad_browser --new-window https://www.google.com

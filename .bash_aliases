@@ -1,4 +1,3 @@
-alias aliases="cat ~/.dotfiles/.bash_aliases; cat ~/.bash_aliases"
 alias notessb="sb & notes"
 alias buc="bash ~/scripts/backup_config.sh"
 alias f="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim"
@@ -21,3 +20,8 @@ alias cdnvim="cd ~/.config/nvim/"
 alias airpods="bluetoothctl connect EC:73:79:03:D9:49"
 alias airpodsdisconnect="bluetoothctl disconnect EC:73:79:03:D9:49"
 # alias code='code --password-store="gnome"'
+
+# Netowork manager
+alias nm="nmcli device wifi list"
+alias nmdisconnect="nmcli device disconnect wlan0"
+alias nmconnect="nmcli c up id"
