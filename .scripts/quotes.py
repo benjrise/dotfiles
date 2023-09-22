@@ -8,24 +8,22 @@
 import sys
 import os
 
-if len(sys.argv) < 2:
-    print('Usage: quotes.py <file>')
-    exit(1)
-
-if sys.argv[1] == '--help':
-    print('Usage: quotes.py <file>')
+if len(sys.argv) < 3:
+    print('Usage: quotes.py <repo_base_path> <file1> <file2> ...')
+    print('No files specified.')
     exit(0)
 
 # ensure only md is affected.
 quotes_new = []
 phrases_new = []
 words_new = []
-for file in sys.argv[1:]:
+for file in sys.argv[2:]:
     if file[-3:] != ".md":
         print("Skipping non markdown file: " + file)
         continue
 
     print("Processing: " + file)
+    file = os.path.join(sys.argv[1], file)
     front_zone = 0
     with open(file, 'r') as f:
         lines = f.readlines()

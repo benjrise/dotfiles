@@ -1,0 +1,20 @@
+// ==UserScript==
+// @name         Button clicker
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://chat.openai.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=openai.com
+// @grant        none
+// ==/UserScript==
+
+window.addEventListener('keydown', function(e) {
+    // Check if 'Ctrl' and 'Enter' keys are pressed together
+    if (e.ctrlKey && e.keyCode == 13) {
+        var button = document.querySelector('.enabled\\:bg-brand-purple');
+        if (button) {
+            button.click();
+        }
+    }
+});

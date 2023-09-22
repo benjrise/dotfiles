@@ -29,7 +29,8 @@ def flashcard_only_lines_changed(repo_path, file_path):
 def main():
     if len(sys.argv) < 3:
         print('Usage: add-modified-date.py <repo_base_path> <file1> <file2> ...')
-        exit(1)
+        print('No files specified.')
+        exit(0)
     
     repo_base_path = sys.argv[1]
     exclude_folders = ["Templates", "Journal", ".obsidian"]
