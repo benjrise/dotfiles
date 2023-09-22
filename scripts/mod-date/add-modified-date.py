@@ -50,10 +50,8 @@ def main():
             continue
 
         if flashcard_only_lines_changed(repo_base_path, full_path):
-            print("Flash card change only, skipping file: " + full_path)
+            print(f"Flash card change only, skipping file: {full_path}")
             continue
-        else:
-            print("Other changes")
 
         print(f"Processing: {full_path}")
 
