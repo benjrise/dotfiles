@@ -142,25 +142,11 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+Right resize shrink width 10 px or 10 ppt
-bindsym $mod+Up resize grow height 10 px or 10 ppt
-bindsym $mod+Down resize shrink height 10 px or 10 ppt
-bindsym $mod+Left resize grow width 10 px or 10 ppt
+bindsym $mod+Right resize shrink width 5 px or 5 ppt
+bindsym $mod+Up resize grow height 5 px or 5 ppt
+bindsym $mod+Down resize shrink height 5 px or 5 ppt
+bindsym $mod+Left resize grow width 5 px or 5 ppt
 
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#   status_command i3status -c ~/.config/i3/status_bar.conf
-#   colors {
-# 		background $bg-color
-#     	separator #757575
-# 		#                  border             background         text
-# 		focused_workspace  $bg-color          $bg-color          $text-color
-# 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-# 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-# 	}
-# }
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 
 # Binds lock key to i3lock
@@ -173,10 +159,8 @@ mode "$mode_launcher" {
     bindsym Return mode "default"
 }
 
-# For screenshots install :
-# apt-get install maim xclip copyq
 # Screenshot selection to clipboard
-bindsym Ctrl+Shift+Insert exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Insert exec --no-startup-id flameshot gui
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
@@ -184,17 +168,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Change laptop resolution
 exec xrandr --output eDP-1 --mode 3840x2400 --scale 0.75x0.75
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/wp8422895-lofi-room-wallpapers.jpg
-
-# Never used bindings 
-# Make the currently focused window a scratchpad
-# bindsym $mod+Shift+minus move scratchpad
-# If obsidian move to a scratchpad use notes keybinding tor bring up
-# Show the first scratchpad window
-# bindsym $mod+minus scratchpad show
-# bindsym $mod+x floating disable; floating enable
-
-bindsym $mod+s exec c 
- # --password_store="gnome"
 
 set $bg-color 	          #2f343f
 set $inactive-bg-color   #2f343f
@@ -220,7 +193,6 @@ bindsym $mod+Return exec kitty
 # extra biding in case kitty breaks
 bindsym $mod+u exec gnome-terminal 
 
-# floating terminal with mod+t
 for_window [instance="terminal-dropdown"] floating enable 
 for_window [instance="terminal-dropdown"] resize set 2000 1200
 for_window [instance="terminal-dropdown"] border pixel 10
@@ -233,7 +205,7 @@ for_window [class="bg-browser"] resize set 2000 1200
 for_window [class="bg-browser"] border pixel 10
 for_window [class="bg-browser"] move scratchpad
 bindsym $mod+c [class="bg-browser"] scratchpad show
-bindsym $mod+b exec --no-startup-id ~/scripts/firefox-startup
+bindsym $mod+b exec --no-startup-id ~/.scripts/open-gpt.sh
 
 for_window [instance="notes-dropdown"] floating enable 
 for_window [instance="notes-dropdown"] resize set 2000 1200
@@ -244,9 +216,6 @@ bindsym $mod+n [instance="notes-dropdown"] scratchpad show; [instance="dropdown"
 
 # rename workspaces
 bindsym $mod+r exec i3-input -F "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):%s"" -P "New name: "
-# bindsym $mod+r exec i3-input -F "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):%s"" -P "New name: "
-# bindsym $mod+r exec --no-startup-id bash -c 'NEW_NAME=$(rofi -dmenu -p "New name: "); i3-msg rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].name")" to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):${NEW_NAME}"'
-
 # clear workspace name need to change this at some point
 bindsym $mod+q exec i3-msg "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num")""
 
@@ -259,10 +228,4 @@ exec kitty
 exec notes 
 exec --no-startup-id firefox -P default
 exec --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
-# exec_always --no-startup-id firefox
-# exec sb
-#
-# set $scratchpad_browser "firefox"
-# exec_always --no-startup-id firefox --class=$scratchpad_browser --new-window https://www.google.com
-# for_window [class="$scratchpad_browser"] move scratchpad
 

@@ -57,7 +57,7 @@ def main():
         print(f"Processing: {full_path}")
 
         # date format: 1st January 2020
-        date = subprocess.check_output(['node', '/home/benjrise/scripts/mod-date/date.js', full_path])
+        date = subprocess.check_output(['node', '/home/benjrise/.scripts/mod-date/date.js', full_path])
         date = date.decode('utf-8').strip()
 
         lines_out = []
