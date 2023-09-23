@@ -25,7 +25,7 @@ main(){
    local second_brain_path="$base_path/Data/Obsidian/second-brain"
    cd $base_path
    git -C /home/benjrise/ add -u 
-   git -C /home/benjrise/.scripts/
+   git -C /home/benjrise/ add .scripts
    git -C /home/benjrise/ commit -m ".config update"
    git -C /home/benjrise/ push
    #
