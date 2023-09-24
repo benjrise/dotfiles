@@ -34,6 +34,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec --no-startup-id picom 
+# Clipboard manager daemon
+exec --no-startup-id clipmenud
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -222,8 +224,10 @@ bindsym $mod+q exec i3-msg "rename workspace to "$(i3-msg -t get_workspaces | jq
 # rofi modes
 bindsym $mod+semicolon exec rofi -show run 
 bindsym $mod+slash exec rofi -show drun -show-icons
-bindsym $mod+p exec rofi -show window -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
-#
+bindsym $mod+p exec clipmenu
+# Numberlock is 77 brings up calc, may not work on other keyboards
+bindcode $mod+77 exec rofi -show calc -modi calc  -no-show-match -no-sort -no-persist-history -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b"
+
 exec kitty
 exec notes 
 exec --no-startup-id firefox -P default

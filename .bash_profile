@@ -25,4 +25,5 @@ fi
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/bin
+export EDITOR=nvim
 # neofetch

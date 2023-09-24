@@ -1,18 +1,22 @@
 configuration {
-  display-drun: "Applications:";
-  display-window: "Windows:";
-  drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font Medium 16";
-  modi: "window,run,drun";
+   display-drun: "Applications:";
+   display-window: "Windows:";
+   drun-display-format: "{name}";
+   font: "JetBrainsMono Nerd Font Medium 16";
+   modi: "window,run,drun";
+   kb-accept-entry: "Return";
+   kb-remove-to-eol: "";
+   kb-row-up: "Up,Control+k"; 
+   kb-row-down: "Down,Control+j";
 }
 
 @theme "/dev/null"
 
 * {
-  bg: #1e1e2e99;
+  bg: #24283b80;
   bg-alt: #31324499;
 
-  fg: #cdd6f4;
+  fg: #c0caf5;
   fg-alt: #7f849c;
 
   background-color: @bg;

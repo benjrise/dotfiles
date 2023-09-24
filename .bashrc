@@ -120,7 +120,7 @@ if [ -f ~/.dotfiles/.bashrc ]; then
 fi
 
 sd(){
-   ~/scripts/exit 
+   ~/.scripts/exit 
    shutdown +0
 }
 
