@@ -152,8 +152,8 @@ bindsym $mod+Left resize grow width 5 px or 5 ppt
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 
 # Binds lock key to i3lock
-bindsym $mod+shift+x exec i3lock
-bindcode $mod+133 exec i3lock
+bindsym $mod+shift+x exec betterlockscreen -l dim
+bindcode $mod+133 exec betterlockscreen -l dim
 
 mode "$mode_launcher" {
     bindsym f exec firefox
