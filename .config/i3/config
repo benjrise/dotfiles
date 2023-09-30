@@ -209,12 +209,12 @@ for_window [class="bg-browser"] move scratchpad
 bindsym $mod+c [class="bg-browser"] scratchpad show
 bindsym $mod+b exec --no-startup-id ~/.scripts/open-gpt.sh
 
-for_window [instance="notes-dropdown"] floating enable 
-for_window [instance="notes-dropdown"] resize set 2000 1200
-for_window [instance="notes-dropdown"] border pixel 10
-for_window [instance="notes-dropdown"] move scratchpad
-exec_always --no-startup-id kitty --name notes-dropdown --class notes-dropdown -d ~/Data/Obsidian/ml-notes nvim
-bindsym $mod+n [instance="notes-dropdown"] scratchpad show; [instance="dropdown"] move position center
+for_window [instance="vim-scratchpad"] floating enable 
+for_window [instance="vim-scratchpad"] resize set 2000 1200
+for_window [instance="vim-scratchpad"] border pixel 10
+for_window [instance="vim-scratchpad"] move scratchpad
+exec_always --no-startup-id kitty --name vim-scratchpad --class vim-scratchpad -d ~/Documents/scratchpad/ nvim scratchpad.md
+bindsym $mod+s [instance="vim-scratchpad"] scratchpad show; [instance="dropdown"] move position center
 
 # rename workspaces
 bindsym $mod+r exec i3-input -F "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):%s"" -P "New name: "
