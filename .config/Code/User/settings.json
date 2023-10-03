@@ -9,7 +9,7 @@
         "editor.formatOnType": true,
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "editor.defaultFormatter": "ms-python.vscode-pylance",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "launch": {
         "configurations": [
             {
