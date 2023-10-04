@@ -519,5 +519,22 @@
       "key": "ctrl+p",
       "command": "-extension.vim_ctrl+p",
       "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+      "key": "ctrl+k d",
+      "command": "github.copilot.interactiveEditor.generateDocs"
+    },
+    {
+      "key": "ctrl+k f",
+      "command": "github.copilot.interactiveEditor.fix"
+    },
+    {
+      "key": "ctrl+k f",
+      "command": "-workbench.action.closeFolder",
+      "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+    },
+    {
+      "key": "ctrl+k d",
+      "command": "-workbench.files.action.compareWithSaved"
     }
 ]

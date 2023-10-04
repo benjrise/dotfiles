@@ -127,7 +127,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="firefox"] $ws2
-assign [class="obsidian"] $ws3
+assign [class="notes"] $ws3
 
 # cisco client doesn't like window mode
 for_window [class="Com.cisco.anyconnect.gui"] floating enable
@@ -228,8 +228,12 @@ bindsym $mod+p exec clipmenu
 # Numberlock is 77 brings up calc, may not work on other keyboards
 bindcode $mod+77 exec rofi -show calc -modi calc  -no-show-match -no-sort -no-persist-history -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b"
 
+assign[title="notes"] $ws3
+assign[title="sb"] $ws9
 exec kitty
-exec notes 
+exec_always --no-startup-id notes 
+exec_always --no-startup-id obsidian obsidian:///home/benjrise/Data/Obsidian/second-brain
+exec_always bash ~/xdotool.sh 
 exec --no-startup-id firefox -P default
 exec --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
 
