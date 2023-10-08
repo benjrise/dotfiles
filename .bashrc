@@ -124,17 +124,17 @@ sd(){
    shutdown +0
 }
 
-notes(){
-    obsidian obsidian:///home/benjrise/Data/Obsidian/ml-notes
-    ping -c1 github.com 
-        if [ $? -eq 0 ]; then  
-            git -C /home/benjrise/Data/Obsidian/ml-notes pull
-            git -C /home/benjrise/Data/Obsidian/ml-notes add .
-            git -C /home/benjrise/Data/Obsidian/ml-notes commit -m "auto-backup"
-            git -C /home/benjrise/Data/Obsidian/ml-notes push
-        fi
-
-}
+# notes(){
+#     obsidian obsidian:///home/benjrise/Data/Obsidian/ml-notes
+#     ping -c1 github.com 
+#         if [ $? -eq 0 ]; then  
+#             git -C /home/benjrise/Data/Obsidian/ml-notes pull
+#             git -C /home/benjrise/Data/Obsidian/ml-notes add .
+#             git -C /home/benjrise/Data/Obsidian/ml-notes commit -m "auto-backup"
+#             git -C /home/benjrise/Data/Obsidian/ml-notes push
+#         fi
+#
+# }
 
 # sb(){
 #     obsidian obsidian:///home/benjrise/Data/Obsidian/second-brain
