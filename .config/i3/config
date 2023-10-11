@@ -106,7 +106,7 @@ set $ws10 "10"
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3, layout tabbed
+bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
@@ -171,9 +171,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Change laptop resolution
 exec xrandr --output eDP-1 --mode 3840x2400 --scale 0.75x0.75
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/wp8422895-lofi-room-wallpapers.jpg
-# exec_always i3-msg "workspace 8; exec obsidian obsidian:///home/benjrise/Data/Obsidian/second-brain; sleep 20"
-# exec_always obsidian obsidian:///home/benjrise/Data/Obsidian/second-brain
-# exec i3-msg move container to workspace 8
 
 set $bg-color 	          #2f343f
 set $inactive-bg-color   #2f343f
@@ -231,6 +228,7 @@ bindsym $mod+slash exec rofi -show drun -show-icons
 bindsym $mod+p exec clipmenu
 # Numberlock is 77 brings up calc, may not work on other keyboards
 bindcode $mod+77 exec rofi -show calc -modi calc  -no-show-match -no-sort -no-persist-history -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b"
+bindsym $mod+XF86Calculator exec rofi -show calc -modi calc  -no-show-match -no-sort -no-persist-history -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b"
 
 assign [title="notes"] $ws3
 assign [title="second-brain"] $ws8
