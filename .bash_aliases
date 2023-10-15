@@ -25,3 +25,6 @@ alias airpodsdisconnect="bluetoothctl disconnect EC:73:79:03:D9:49"
 alias nm="nmcli device wifi list"
 alias nmdisconnect="nmcli device disconnect wlan0"
 alias nmconnect="nmcli c up id"
+
+# File manager
+alias files="nautilus ."
