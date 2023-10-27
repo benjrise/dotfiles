@@ -1,7 +1,16 @@
 // Place your key bindings in this file to override the defaults
 
 [
-    // For selection in lists and intellisense
+  {
+    "key" : "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when" : "inputFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key" : "shift+l",
+    "command": "workbench.action.nextEditor",
+    "when" : "inputFocus && vim.mode == 'Normal'"
+  },
   {
     "key": "j",
     "command": "list.focusDown",

@@ -28,3 +28,6 @@ alias nmconnect="nmcli c up id"
 
 # File manager
 alias files="nautilus ."
+
+# Turn clock on and off
+alias focus="~/.scripts/focus.sh"
