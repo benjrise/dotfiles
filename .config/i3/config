@@ -204,9 +204,10 @@ exec --no-startup-id kitty --name terminal-dropdown --class terminal-dropdown
 bindsym $mod+t [instance="terminal-dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 for_window [class="bg-browser"] floating enable
-for_window [class="bg-browser"] resize set 2000 1200
+for_window [class="bg-browser"] resize set 2500 1500
 for_window [class="bg-browser"] border pixel 10
 for_window [class="bg-browser"] move scratchpad
+
 bindsym $mod+c [class="bg-browser"] scratchpad show
 bindsym $mod+b exec --no-startup-id ~/.scripts/open-gpt.sh
 
