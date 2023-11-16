@@ -537,5 +537,14 @@
     {
       "key": "ctrl+k d",
       "command": "-workbench.files.action.compareWithSaved"
+    },
+    {
+      "key": "ctrl+enter",
+      "command": "-github.copilot.generate",
+      "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+      "key": "ctrl+shift+b",
+      "command": "editor.debug.action.toggleBreakpoint"
     }
 ]
