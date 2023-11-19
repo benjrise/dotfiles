@@ -136,4 +136,5 @@
     "python.formatting.provider": "none",
     "notebook.lineNumbers": "on",
     "window.zoomLevel": -1,
+    "vim.easymotion": true,
 }
