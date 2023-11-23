@@ -135,7 +135,7 @@
     "window.titleBarStyle": "custom",
     "python.formatting.provider": "none",
     "notebook.lineNumbers": "on",
-    "window.zoomLevel": -1,
     "vim.leader": " ",
     "vim.easymotion": true,
+    "window.zoomLevel": 1,
 }
