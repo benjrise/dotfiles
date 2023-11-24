@@ -137,5 +137,4 @@
     "notebook.lineNumbers": "on",
     "vim.leader": " ",
     "vim.easymotion": true,
-    "window.zoomLevel": 1,
 }
