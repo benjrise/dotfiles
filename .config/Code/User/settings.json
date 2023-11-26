@@ -137,4 +137,5 @@
     "notebook.lineNumbers": "on",
     "vim.leader": " ",
     "vim.easymotion": true,
+    "vim.camelCaseMotion.enable": true,
 }
