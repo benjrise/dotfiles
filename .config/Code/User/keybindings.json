@@ -399,7 +399,7 @@
       "when": "taskCommandsRegistered"
     },
     {
-      "key": "ctrl+shift+b",
+      "key": "ctrl+alt+b",
       "command": "editor.debug.action.toggleInlineBreakpoint",
       "when": "editorTextFocus"
     },
@@ -544,7 +544,11 @@
       "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
     },
     {
-      "key": "ctrl+shift+b",
+      "key": "ctrl+alt+b",
       "command": "editor.debug.action.toggleBreakpoint"
+    },
+    {
+      "key": "ctrl+alt+b",
+      "command": "-workbench.action.toggleAuxiliaryBar"
     }
 ]
