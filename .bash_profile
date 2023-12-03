@@ -22,7 +22,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/keyring/ssh
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/bin
 export EDITOR=nvim
