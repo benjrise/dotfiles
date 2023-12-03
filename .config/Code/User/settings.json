@@ -138,4 +138,5 @@
     "vim.leader": " ",
     "vim.easymotion": true,
     "vim.camelCaseMotion.enable": true,
+    "window.zoomLevel": 1,
 }
