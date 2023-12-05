@@ -561,4 +561,8 @@
       "command": "-copyFilePath",
       "when": "editorFocus"
     },
+    {
+      "key": "alt+enter",
+      "command": "github.copilot.interactiveEditor.generate"
+    },
 ]
