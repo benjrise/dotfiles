@@ -565,4 +565,14 @@
       "key": "alt+enter",
       "command": "github.copilot.interactiveEditor.generate"
     },
+    {
+      "key": "alt+o",
+      "command": "workbench.action.files.openFolder",
+      "when": "openFolderWorkspaceSupport"
+    },
+    {
+      "key": "ctrl+k ctrl+o",
+      "command": "-workbench.action.files.openFolder",
+      "when": "openFolderWorkspaceSupport"
+    },
 ]
