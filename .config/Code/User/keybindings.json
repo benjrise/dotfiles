@@ -575,4 +575,8 @@
       "command": "-workbench.action.files.openFolder",
       "when": "openFolderWorkspaceSupport"
     },
+    {
+      "key": "alt+s",
+      "command": "opensshremotes.openEmptyWindow"
+    },
 ]
