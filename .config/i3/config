@@ -238,5 +238,5 @@ exec --no-startup-id obsidian obsidian:///home/benjrise/Data/Obsidian/second-bra
 exec --no-startup-id firefox -P default
 exec --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
 exec microsoft-edge-stable https://teams.microsoft.com/_?culture=en-gb&country=GB&lm=deeplink&lmsrc=homePageWeb&cmpid=WebSignIn#/conversations/19:0dc20be6-ed0c-42f4-9e87-b4cbaaba4d0e_f126220b-1c9c-49a4-839c-32ab302be7a1@unq.gbl.spaces?ctx=chat
-
-
+#
+#
