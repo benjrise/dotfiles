@@ -130,7 +130,7 @@ assign [class="Microsoft-edge"] $ws10
 
 # cisco client doesn't like window mode
 for_window [class="Com.cisco.anyconnect.gui"] floating enable
-for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable
+for_window [class="Cisco Secure Client"] floating enable
 
 # move focused workspace between monitors
 bindsym $mod+Shift+greater move workspace to output right
@@ -192,7 +192,7 @@ default_border none
 
 bindsym $mod+Return exec kitty 
 # extra biding in case kitty breaks
-bindsym $mod+u exec gnome-terminal 
+bindsym $mod+u exec rxvt
 
 for_window [instance="terminal-dropdown"] floating enable 
 for_window [instance="terminal-dropdown"] resize set 2000 1200
@@ -214,6 +214,7 @@ for_window [instance="vim-scratchpad"] resize set 2000 1200
 for_window [instance="vim-scratchpad"] border pixel 10
 for_window [instance="vim-scratchpad"] move scratchpad
 exec_always --no-startup-id kitty --name vim-scratchpad --class vim-scratchpad -d ~/Documents/scratchpad/ nvim scratchpad.md
+bindsym $mod+Shift+s exec --no-startup-id kitty --name vim-scratchpad --class vim-scratch -d ~/Documents/scratchpad/ nvim scratchpad.md
 bindsym $mod+s [instance="vim-scratchpad"] scratchpad show; [instance="dropdown"] move position center
 
 # rename workspaces
@@ -226,8 +227,8 @@ bindsym $mod+semicolon exec rofi -show run
 bindsym $mod+slash exec rofi -show drun -show-icons
 bindsym $mod+p exec clipmenu
 # Numberlock is 77 brings up calc, may not work on other keyboards
-bindcode $mod+77 exec rofi -show calc -modi calc  -no-show-match -no-sort -no-persist-history -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b"
-bindsym $mod+XF86Calculator exec rofi -show calc -modi calc  -no-show-match -no-sort -no-persist-history -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b" rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xsel -b"
+bindcode $mod+77 exec rofi -show calc -modi calc -no-show-match -no-sort -no-persist-history -calc-command "echo '{result}' | xsel -b"
+bindsym $mod+XF86Calculator exec rofi -show calc -modi calc -no-show-match -no-sort -no-persist-history -calc-command "echo '{result}' | xsel -b"
 
 assign [title="notes"] $ws3
 assign [title="second-brain"] $ws8
@@ -237,6 +238,6 @@ exec --no-startup-id obsidian obsidian:///home/benjrise/Data/Obsidian/second-bra
 # exec_always bash ~/xdotool.sh 
 exec --no-startup-id firefox -P default
 exec --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
-exec microsoft-edge-stable https://teams.microsoft.com/_?culture=en-gb&country=GB&lm=deeplink&lmsrc=homePageWeb&cmpid=WebSignIn#/conversations/19:0dc20be6-ed0c-42f4-9e87-b4cbaaba4d0e_f126220b-1c9c-49a4-839c-32ab302be7a1@unq.gbl.spaces?ctx=chat
+exec microsoft-edge https://teams.microsoft.com/_?culture=en-gb&country=GB&lm=deeplink&lmsrc=homePageWeb&cmpid=WebSignIn#/conversations/19:0dc20be6-ed0c-42f4-9e87-b4cbaaba4d0e_f126220b-1c9c-49a4-839c-32ab302be7a1@unq.gbl.spaces?ctx=chat
 #
 #
