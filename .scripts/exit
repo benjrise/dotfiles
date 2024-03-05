@@ -39,5 +39,12 @@ main(){
    git add .
    run_python_script $second_brain_path "$base_path/.scripts/quotes.py"
    update_git_repo $second_brain_path "auto-backup"
+
+   cd /home/benjrise/Documents/latex/journal-article/
+   git pull
+   git add -u
+   git commit -m "auto-backup"
+   git push
+
 }
 main
