@@ -87,6 +87,8 @@ bindsym $mod+a focus parent
 
 bindsym $mod+F5 exec brightnessctl set +10%
 bindsym $mod+F4 exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -144,7 +146,6 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+Right resize shrink width 5 px or 5 ppt
-bindsym $mod+Right resize shrink width 5 px or 5 ppt
 bindsym $mod+Up resize grow height 5 px or 5 ppt
 bindsym $mod+Down resize shrink height 5 px or 5 ppt
 bindsym $mod+Left resize grow width 5 px or 5 ppt
@@ -163,9 +164,6 @@ mode "$mode_launcher" {
 
 # Screenshot selection to clipboard
 bindsym Ctrl+Shift+Insert exec --no-startup-id flameshot gui
-
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Change laptop resolution
 exec xrandr --output eDP-1 --mode 3840x2400 --scale 1.0x1.0
