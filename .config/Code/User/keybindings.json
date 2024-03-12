@@ -390,11 +390,6 @@
     "when": "taskCommandsRegistered"
   },
   {
-    "key": "ctrl+shift+b",
-    "command": "editor.debug.action.toggleInlineBreakpoint",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "shift+f9",
     "command": "-editor.debug.action.toggleInlineBreakpoint",
     "when": "editorTextFocus"
@@ -550,5 +545,9 @@
     "key": "ctrl+k ctrl+o",
     "command": "-workbench.action.files.openFolder",
     "when": "openFolderWorkspaceSupport"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "editor.debug.action.toggleInlineBreakpoint"
   }
 ]
