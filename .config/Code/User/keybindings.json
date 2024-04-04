@@ -549,5 +549,5 @@
   {
     "key": "ctrl+shift+b",
     "command": "editor.debug.action.toggleInlineBreakpoint"
-  }
+  },
 ]
