@@ -18,19 +18,9 @@
   "when": "explorerViewletVisible && filesExplorerFocus"
 },
 {
-  "key": "ctrl+j",
-  "command": "selectNextSuggestion",
-  "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-},
-{
-  "key": "ctrl+k",
+  "key": "ctrl+=",
   "command": "selectPrevSuggestion",
   "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-},
-{
-  "key": "ctrl+j",
-  "command": "workbench.action.quickOpenNavigateNext",
-  "when": "inQuickOpen"
 },
 {
   "key": "tab",
@@ -103,10 +93,6 @@
   "when": "!terminalFocus"
 },
 // {
-//   "key": "ctrl+j",
-//   "command": "-editor.action.insertLineAfter",
-//   "when": "editorTextFocus && neovim.ctrlKeysInsert && !neovim.recording && neovim.mode == 'insert'"
-// },
 {
   "key": "alt+j",
   "command": "workbench.action.terminal.focus",
@@ -116,10 +102,6 @@
   "key": "ctrl+shift+t",
   "command": "workbench.action.togglePanel"
 },
-// {
-//   "key": "ctrl+j",
-//   "command": "-workbench.action.togglePanel"
-// },
 {
   "key": "shift+tab",
   "command": "-acceptAlternativeSelectedSuggestion",
@@ -129,6 +111,26 @@
 "key":"ctrl+j",
 "command": "workbench.action.terminal.focus",
 "when": "editorTextFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+},
+{
+  "key": "ctrl+j",
+  "command": "workbench.action.quickOpenNavigateNext",
+  "when": "inQuickOpen"
+},
+{
+  "key": "ctrl+j",
+  "command": "selectNextSuggestion",
+  "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+},
+{
+  "key": "ctrl+k",
+  "command": "workbench.action.quickOpenNavigatePrevious",
+  "when": "inQuickOpen"
+},
+{
+  "key": "ctrl+k",
+  "command": "selectPrevSuggestion",
+  "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
 },
 {
     "key": "alt+k",
@@ -549,5 +551,15 @@
   {
     "key": "ctrl+shift+b",
     "command": "editor.debug.action.toggleInlineBreakpoint"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "up",
+    "command": "-selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
   },
 ]
