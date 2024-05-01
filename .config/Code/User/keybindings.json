@@ -549,10 +549,6 @@
     "when": "openFolderWorkspaceSupport"
   },
   {
-    "key": "ctrl+shift+b",
-    "command": "editor.debug.action.toggleInlineBreakpoint"
-  },
-  {
     "key": "ctrl+1",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
@@ -561,5 +557,41 @@
     "key": "up",
     "command": "-selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
+  },
+  {
+    "key": "f9",
+    "command": "-editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.closeSidebar", 
+    "when": "explorerViewletVisible" 
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.closeSidebar",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "-workbench.action.zoomIn"
   },
 ]

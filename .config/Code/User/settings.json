@@ -139,4 +139,10 @@
     "vim.leader": " ",
     "vim.easymotion": true,
     "vim.camelCaseMotion.enable": true,
+    "vim.normalModeKeyBindings": [
+        {
+        "before": ["<leader>", "e"],
+        "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+    ]
 }
