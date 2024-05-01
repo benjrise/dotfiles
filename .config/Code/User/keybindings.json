@@ -594,4 +594,17 @@
     "key": "ctrl+=",
     "command": "-workbench.action.zoomIn"
   },
+  {
+    "key": "ctrl+shift+alt+down",
+    "command": "workbench.view.debug"
+  },
+  {
+    "key": "ctrl+shift+y",
+    "command": "-workbench.debug.action.toggleRepl",
+    "when": "workbench.panel.repl.view.active"
+  },
+  {
+    "key": "ctrl+e",
+      "command": "workbench.action.focusActiveEditorGroup"
+  }
 ]

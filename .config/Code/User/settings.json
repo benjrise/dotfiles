@@ -144,5 +144,10 @@
         "before": ["<leader>", "e"],
         "commands": ["workbench.action.toggleSidebarVisibility"]
         },
+        {
+        "before": ["<leader>", "d"],
+        "commands": ["workbench.debug.action.toggleRepl"],
+        // "when": ["workbench.panel.repl.view.active"]
+        },
     ]
 }
