@@ -149,5 +149,17 @@
         "commands": ["workbench.debug.action.toggleRepl"],
         // "when": ["workbench.panel.repl.view.active"]
         },
-    ]
+    ],
+    "search.exclude": {
+        "**/*.csv": true,
+        "**/*.jpg": true,
+        "**/*.json": true,
+        "**/*.log": true,
+        "**/*.png": true,
+        "**/*.txt": true,
+        "**/*.yaml": true,
+        "**/*rank*": true,
+        "**/events*": true,
+        "**/last_checkpoint": true
+    }
 }
