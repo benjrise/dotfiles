@@ -606,5 +606,15 @@
   {
     "key": "ctrl+e",
       "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+shift+[Backslash]",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   }
 ]
