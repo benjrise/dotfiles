@@ -232,8 +232,8 @@ bindsym $mod+XF86Calculator exec rofi -show calc -modi calc -no-show-match -no-s
 assign [title="notes"] $ws3
 assign [title="second-brain"] $ws8
 exec kitty
-exec --no-startup-id obsidian obsidian:///home/benjrise/Data/Obsidian/ml-notes
-exec --no-startup-id obsidian obsidian:///home/benjrise/Data/Obsidian/second-brain
+exec --no-startup-id ~/Downloads/Obsidian-1.5.12.AppImage obsidian:///home/benjrise/Data/Obsidian/ml-notes
+exec --no-startup-id ~/Downloads/Obsidian-1.5.12.AppImage obsidian:///home/benjrise/Data/Obsidian/second-brain
 # exec_always bash ~/xdotool.sh 
 exec --no-startup-id firefox -P default
 exec --no-startup-id firefox https://chat.openai.com/chat -P bg_browser --no-remote --class="bg-browser" 
