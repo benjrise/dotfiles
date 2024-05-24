@@ -161,5 +161,6 @@
         "**/*rank*": true,
         "**/events*": true,
         "**/last_checkpoint": true
-    }
+    },
+    "github.copilot.editor.enableAutoCompletions": true
 }
