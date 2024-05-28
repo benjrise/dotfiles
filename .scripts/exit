@@ -26,6 +26,7 @@ main() {
     local second_brain_path="$base_path/Data/Obsidian/second-brain"
     local journal_path="$base_path/Documents/latex/journal-article"
     local few_shot="$base_path/Documents/latex/few-shot"
+    local ipap="$base_path/Documents/latex/ipap-latest"
 
     # Update various configurations and dotfiles
     echo "Backing up: $base_path/.config/nvim/"
@@ -36,6 +37,9 @@ main() {
     update_git_repo "$journal_path" "auto-backup"
     echo "Backing up: $few_shot"
     update_git_repo "$few_shot" "auto-backup"
+    echo "Backing up: $ipap"
+    update_git_repo "$ipap" "auto-backup"
+
 
     # Update base repository
     echo "Backing up home directory dotfiles"
