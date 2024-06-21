@@ -31,3 +31,4 @@ alias files="nautilus ."
 
 # Turn clock on and off
 alias focus="~/.scripts/focus.sh"
+alias clean_aux="~/.scripts/clean_aux.sh"
