@@ -19,12 +19,19 @@ update_git_repo() {
     git -C "$repo_path" commit -m "$commit_msg"
     git -C "$repo_path" push
 }
+update_git_repo_u() {
+    local repo_path="$1"
+    local commit_msg="$2"
+    git -C "$repo_path" add -u
+    git -C "$repo_path" commit -m "$commit_msg"
+    git -C "$repo_path" push
+}
 
 main() {
     local base_path="/home/benjrise"
     local obsidian_path="$base_path/Data/Obsidian/ml-notes"
     local second_brain_path="$base_path/Data/Obsidian/second-brain"
-    local journal_path="$base_path/Documents/latex/journal-article"
+    local journal_path="$base_path/Documents/elsarticle-new"
     local few_shot="$base_path/Documents/latex/few-shot"
     local ipap="$base_path/Documents/latex/ipap-latest"
 
