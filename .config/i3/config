@@ -201,7 +201,7 @@ exec --no-startup-id kitty --name terminal-dropdown --class terminal-dropdown
 bindsym $mod+t [instance="terminal-dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 for_window [class="bg-browser"] floating enable
-for_window [class="bg-browser"] resize set 4500 2500
+for_window [class="bg-browser"] resize set 3500 2000
 for_window [class="bg-browser"] border pixel 10
 for_window [class="bg-browser"] move scratchpad
 
