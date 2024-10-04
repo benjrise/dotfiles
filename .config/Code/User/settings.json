@@ -150,6 +150,14 @@
         // "when": ["workbench.panel.repl.view.active"]
         },
     ],
+    // For typo  ciw->cie changes whole buffer https://github.com/VSCodeVim/Vim/issues/4992
+    "vim.operatorPendingModeKeyBindings": [
+        {
+            "before": ["i", "e"],
+            "after": ["i", "w"]
+        }
+    ],
+
     "search.exclude": {
         "**/*.csv": true,
         "**/*.jpg": true,
