@@ -4,6 +4,7 @@
     "terminal.integrated.localEchoLatencyThreshold": -1,
     "editor.formatOnSave": true,
     "path-intellisense.absolutePathToWorkspace": false,
+    "python.analysis.autoImportCompletions": true,
     "[python]": {
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
