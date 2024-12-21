@@ -623,5 +623,10 @@
     "key": "ctrl+shift+\\",
     "command": "workbench.action.closeEditorsInOtherGroups"
   },
+  {
+    "key": "ctrl+shift+space",
+    "command": "-editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  },
 
 ]

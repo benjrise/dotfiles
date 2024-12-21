@@ -1,8 +1,12 @@
+
 {
     "workbench.colorTheme": "GitHub Dark",
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.localEchoLatencyThreshold": -1,
     "editor.formatOnSave": true,
+    "git.enabled": false,
+    "git.autofetch": false,
+    "git.path": null,
     "path-intellisense.absolutePathToWorkspace": false,
     "python.analysis.autoImportCompletions": true,
     "[python]": {
@@ -149,6 +153,12 @@
         "before": ["<leader>", "d"],
         "commands": ["workbench.debug.action.toggleRepl"],
         // "when": ["workbench.panel.repl.view.active"]
+        },
+        {
+            "before": ["<leader>", "gh"],
+            "commands" :["editor.action.triggerParameterHints"],
+            "when": "editorHasSignatureHelpProvider && editorTextFocus",
+
         },
     ],
     // For typo  ciw->cie changes whole buffer https://github.com/VSCodeVim/Vim/issues/4992
