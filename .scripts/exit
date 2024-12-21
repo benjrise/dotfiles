@@ -31,22 +31,12 @@ main() {
     local base_path="/home/benjrise"
     local obsidian_path="$base_path/Data/Obsidian/ml-notes"
     local second_brain_path="$base_path/Data/Obsidian/second-brain"
-    local journal_path="$base_path/Documents/elsarticle-new"
-    local few_shot="$base_path/Documents/latex/few-shot"
-    local ipap="$base_path/Documents/latex/ipap-latest"
-
+    #
     # Update various configurations and dotfiles
     echo "Backing up: $base_path/.config/nvim/"
     update_git_repo "$base_path/.config/nvim/" "nvim update"
     echo "Backing up : $base_path/.dotfiles/"
     update_git_repo "$base_path/.dotfiles/" ".dotfiles update"
-    echo "Backing up: $journal_path"
-    update_git_repo "$journal_path" "auto-backup"
-    echo "Backing up: $few_shot"
-    update_git_repo "$few_shot" "auto-backup"
-    echo "Backing up: $ipap"
-    update_git_repo "$ipap" "auto-backup"
-
 
     # Update base repository
     echo "Backing up home directory dotfiles"
@@ -66,7 +56,7 @@ main() {
     echo "Backing up second brain"
     cd "$second_brain_path" || exit
     git add .
-    run_python_script "$second_brain_path" "$base_path/.scripts/quotes.py"
+    # run_python_script "$second_brain_path" "$base_path/.scripts/quotes.py"
     update_git_repo "$second_brain_path" "auto-backup"
 }
 
