@@ -49,7 +49,7 @@ main() {
     echo "Backing up obsidian notes"
     git -C "$obsidian_path" add -u
     run_python_script "$obsidian_path" "$base_path/.scripts/mod-date/add-modified-date.py"
-    update_git_repo "$obsidian_path" "auto-backup"
+    update_git_repo "$obsidian_ipath" "auto-backup"
 
 
     # Update second brain
