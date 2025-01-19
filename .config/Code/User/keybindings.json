@@ -628,5 +628,13 @@
     "command": "-editor.action.triggerParameterHints",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
   },
+  {
+    "key": "ctrl+down",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.increaseViewSize"
+  }
 
 ]
