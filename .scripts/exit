@@ -51,7 +51,7 @@ main() {
     # Update Obsidian notes
     echo "Backing up obsidian notes"
     git -C "$obsidian_path" add -u
-    run_python_script "$obsidian_path" "$base_path/.scripts/mod-date/add-modified-date.py"
+    # run_python_script "$obsidian_path" "$base_path/.scripts/mod-date/add-modified-date.py"
     update_git_repo "$obsidian_ipath" "auto-backup"
 
 
