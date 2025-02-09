@@ -29,6 +29,7 @@ update_git_repo_u() {
 
 main() {
     local base_path="/home/benjrise"
+    local remote_scene="$base_path/Documents/latex/remote-scene"
     local obsidian_path="$base_path/Data/Obsidian/ml-notes"
     local second_brain_path="$base_path/Data/Obsidian/second-brain"
     #
@@ -37,6 +38,8 @@ main() {
     update_git_repo "$base_path/.config/nvim/" "nvim update"
     echo "Backing up : $base_path/.dotfiles/"
     update_git_repo "$base_path/.dotfiles/" ".dotfiles update"
+    echo "Backing up $remote_scene"
+   update_git_repo "$remote_scene" "remote-scene update"
 
     # Update base repository
     echo "Backing up home directory dotfiles"
