@@ -1,3 +1,4 @@
+alias collins="xrandr --output eDP --mode 1920x1080 --scale 1.5x1.5 --output HDMI-A-0 --mode 1920x1080 --scale 1.5x1.5"
 alias notessb="sb & notes"
 alias buc="bash ~/scripts/backup_config.sh"
 alias f="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim"
